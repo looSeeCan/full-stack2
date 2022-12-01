@@ -18,4 +18,4 @@ End... I started out installing express, nodemon, cors. Then, created server.js 
 
 /// SQL, Node, Express, and React JS 1/2 | ~How to Connect it all together (2nd video)
 1.
-
+ss
