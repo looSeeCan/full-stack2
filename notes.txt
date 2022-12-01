@@ -1,0 +1,9 @@
+1. npm install express nodemon cors
+
+2. create server.js
+    check to see if the server is listening = type "nodemon server.js" in the terminal. 
+    write 2 calls that we are going to call from the front end to the back end and get a response from our server
+
+3. App.js
+    const get data function. 
+    add in package.json " "proxy": http://localhost:5000 "
