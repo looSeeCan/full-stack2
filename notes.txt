@@ -1,3 +1,6 @@
+/// Coding with kevin. This tutorial consists of 3 vidieos
+
+/// Full Stack Developer Coding Challenge (first video)
 1. npm install express nodemon cors
 
 2. create server.js
@@ -7,3 +10,12 @@
 3. App.js
     const get data function. 
     add in package.json " "proxy": http://localhost:5000 "
+    useState to create the buttons
+
+End... I started out installing express, nodemon, cors. Then, created server.js where the server stuff is
+        Then created the getData() in app.js.
+
+
+/// SQL, Node, Express, and React JS 1/2 | ~How to Connect it all together (2nd video)
+1.
+ss

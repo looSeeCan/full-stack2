@@ -3,7 +3,7 @@ import React, {useState} from "react";
 
 
 function App() {
-	const [returnedData, setReturnedData] = useState("hi there")
+	const [returnedData, setReturnedData] = useState("");
 
 	const getData = async (url) => {/// this function has a parameter that accepts a url. 
 		/// the await fetch Gets the information (via the "url" parameter) in the app.get function in server.js
@@ -18,15 +18,15 @@ function App() {
 		.then(res => res.json())
 
 		console.log(newData);
-		
-		return newData;
+		setReturnedData(newData);
 	}
 
-	getData("/api"); /// call the function ^. passes this argument which is the value in the app.get function in server.js
+	// getData("/api"); /// call the function ^. passes this argument which is the value in the app.get function in server.js
 
 	return (
 		<div className='App'>
-			{returnedData}
+			<button onClick={() => getData("/api")}>Lucycan</button>
+			<button onClick={() => getData("/quit")}>Ricki</button>
 		</div>
 	);
 }
