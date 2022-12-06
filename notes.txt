@@ -48,6 +48,24 @@ End... I started out installing express, nodemon, cors. Then, created server.js 
     commented out: const API_PORT  down all the way to the end of 2nd call
     added: dbOperation.getEmployees().then
     add in package.json: "server": nodemon server.js /// I don't know why I had to add this
+    added: dbOperation.createEmployees
+    server.js: created ricki
+    created employee.js
+        /// so I had an issue where I kept getting an error in dbOperations.js > createEmployees(). The sql query was erroring. I fixed
+            it by adding the (sso, fullName, email, birth, pwd) part in the query. This part was excluded in the first time that I did this,
+            so, I am not sure why I had to add it in this time. But, the query here is actually the correct way to add a new row.
+            After ^, I decided that I needed to make a primary key. I ran into a couple issues. Something about changing the "prevent
+            saving changes" option. I had to go in mssm > tools > designers > uncheck prevent saving changes
+
+/// SQL, Node, Express, and React JS 2/2 | ~How to Connect it all together (3rd video)
+
+1. Start setting things up to connect to the front end
+    commented out some of the hardcoding and uncommented the express stuff. I think when I was on the second video, I was no longer using
+    express.
+    installed: npm i npm-run-all
+    package.json: "dev": "run-p server start" /// (run parrarel) /// this starts the server and builds our react app at the same time
+    
+
 
 
 

@@ -15,6 +15,22 @@ const getEmployees = async() => { /// get the data from the database
     }
 }
 
+const createEmployees = async(Employee) => { /// get the data from the database
+    try {
+        let pool = await sql.connect(config);
+        let employees = pool.request().query(`INSERT INTO Employee (sso, fullName, email, birth, pwd)
+            VALUES (${Employee.employeeSso}, '${Employee.fullName}', '${Employee.email}', '${Employee.birth}', '${Employee.pwd}')
+        `);
+        
+        return employees;
+    }
+    catch(error) {
+        console.log(error);
+    }
+}
+
+
 module.exports = {
-    getEmployees
+    getEmployees,
+    createEmployees
 }
