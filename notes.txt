@@ -64,7 +64,12 @@ End... I started out installing express, nodemon, cors. Then, created server.js 
     express.
     installed: npm i npm-run-all
     package.json: "dev": "run-p server start" /// (run parrarel) /// this starts the server and builds our react app at the same time
-    
+    I could not get this^ to work, so I am just using seperated terminals to start the port and one to npm start
+
+2. fetchData()
+    spent alot of timem trying to figure out why the req.body was not empty, turns out I had a spelling error in the fethchData() > application/json
+
+....FINISHING NOTES: 
 
 
 
