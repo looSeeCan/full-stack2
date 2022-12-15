@@ -3,10 +3,11 @@
 const config        =require("./dbConfig"),
         sql         =require("mssql");
 
-const getEmployees = async() => { /// get the data from the database
+const getEmployees = async(sso) => { /// get the data from the database
     try {
+        // console.log(sso);
         let pool = await sql.connect(config);
-        let employees = pool.request().query("SELECT * from Employee");
+        let employees = await pool.request().query(`SELECT * from Employee WHERE sso = ${sso}`);
         console.log(employees);
         return employees;
     }
@@ -15,11 +16,11 @@ const getEmployees = async() => { /// get the data from the database
     }
 }
 
-const createEmployees = async(Employee) => { /// get the data from the database
+const createEmployees = async(employee) => { /// get the data from the database
     try {
         let pool = await sql.connect(config);
-        let employees = pool.request().query(`INSERT INTO Employee (sso, fullName, email, birth, pwd)
-            VALUES (${Employee.employeeSso}, '${Employee.fullName}', '${Employee.email}', '${Employee.birth}', '${Employee.pwd}')
+        let employees = await pool.request().query(`INSERT INTO Employee (sso, fullname, email, birth, pwd)
+            VALUES (${employee.sso}, '${employee.fullname}', '${employee.email}', '${employee.birthday}', '${employee.password}')
         `);
         
         return employees;
