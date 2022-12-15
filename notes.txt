@@ -17,5 +17,59 @@ End... I started out installing express, nodemon, cors. Then, created server.js 
 
 
 /// SQL, Node, Express, and React JS 1/2 | ~How to Connect it all together (2nd video)
-1.
-ss
+1. ssms
+    start ssms as usual. connect with regurlar default (windows authentication)
+    create new database. new query to create new table.
+    I ran into a wall here. I am using my work laptop and my home laptop to do this project because I want experience with the details of
+    git -merging between collaborators on a project- That means I need to share a database. I have been trying to allow SQL Server
+    so I can share a databasse between my machines, but, have not gotten it to work. Im going to continue on with this tutorial. I will
+    try to work that out at the end.
+    So in order to make sure that we can configure a user on node.js to access the sql server:
+        msssm > object explorer > connection > security(not the security that in nested in the databases) > logins,
+        create a Loin Name
+        select SQL Server authentication
+        Password
+        confirm password
+        uncheck enforce password policy
+        click ok
+        go back to security > User Mapping > 
+        check SQL tutorial, check db_owner, public. These will give us read and write permissions to the database
+        Could not get it to connect had to do this:
+            Server (Right Click) -> Properties -> Security -> Server Authentication -> select SQL Server and Windows Authentication Mode.
+2. mkdir dbFiles, dbConfig.js, dbOpertion.js
+    dbConfig:
+        config file
+
+    dbOperation.js:
+        npm i mssql --save
+
+3. server.js
+    added dbOperation = require
+    commented out: const API_PORT  down all the way to the end of 2nd call
+    added: dbOperation.getEmployees().then
+    add in package.json: "server": nodemon server.js /// I don't know why I had to add this
+    added: dbOperation.createEmployees
+    server.js: created ricki
+    created employee.js
+        /// so I had an issue where I kept getting an error in dbOperations.js > createEmployees(). The sql query was erroring. I fixed
+            it by adding the (sso, fullName, email, birth, pwd) part in the query. This part was excluded in the first time that I did this,
+            so, I am not sure why I had to add it in this time. But, the query here is actually the correct way to add a new row.
+            After ^, I decided that I needed to make a primary key. I ran into a couple issues. Something about changing the "prevent
+            saving changes" option. I had to go in mssm > tools > designers > uncheck prevent saving changes
+
+/// SQL, Node, Express, and React JS 2/2 | ~How to Connect it all together (3rd video)
+
+1. Start setting things up to connect to the front end
+    commented out some of the hardcoding and uncommented the express stuff. I think when I was on the second video, I was no longer using
+    express.
+    installed: npm i npm-run-all
+    package.json: "dev": "run-p server start" /// (run parrarel) /// this starts the server and builds our react app at the same time
+    
+
+
+
+
+
+
+
+
