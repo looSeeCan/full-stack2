@@ -3,7 +3,7 @@ import React, {useState} from "react";
 // const dbOperation = require("./dbFiles/dbOperation"); 
 
 
-function App() {
+function App() { /// original app
 	const [returnedData, setReturnedData] = useState("");
 	/// be sure that the useState key matches the name in the input
 	const [employee, setEmployee] = useState({sso: 0, fullname: "", email: "", birthday: "", password: ""});
@@ -107,5 +107,9 @@ function App() {
 		</div>
 	);
 }
+
+// function App() {
+
+// };
 
 export default App;

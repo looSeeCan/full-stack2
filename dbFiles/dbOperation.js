@@ -20,7 +20,7 @@ const createEmployees = async(employee) => { /// get the data from the database
     try {
         let pool = await sql.connect(config);
         let employees = await pool.request().query(`INSERT INTO Employee (sso, fullname, email, birth, pwd)
-            VALUES (${employee.sso}, '${employee.fullname}', '${employee.email}', '${employee.birthday}', '${employee.password}')
+            VALUES (${employee.sso}, '${employee.fullname}', '${employee.email}', '${employee.birthday}', '${employee.passwordpp}')
         `);
         
         return employees;
